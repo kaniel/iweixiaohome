@@ -1,0 +1,116 @@
+{
+  "data": {
+    "activity_id": 243, 
+    "add_time": 1426480337000, 
+    "candidates": [
+      {
+        "default_image": "/images/images/placeholder.png", 
+        "describe": "fyj", 
+        "id": 16, 
+        "images": [
+          {
+            "candidate_id": 16, 
+            "id": 44, 
+            "path": "/images/vote/55/16/images/cdd4dae8-cc69-11e4-8ac7-00163e002e66.jpg", 
+            "update_time": 1426571552000
+          }, 
+          {
+            "candidate_id": 16, 
+            "id": 41, 
+            "path": "/images/vote/55/16/images/76d17ae6-cb95-11e4-8ac7-00163e002e66.jpg", 
+            "update_time": 1426480353000
+          }
+        ], 
+        "is_vote": 0, 
+        "title": "qwe", 
+        "update_time": 1426572720000, 
+        "upload_user": 80, 
+        "vote_detail_id": 55, 
+        "vote_num": 0
+      }, 
+      {
+        "default_image": "/images/vote/55/18/images/a53bcb3e-cb95-11e4-8ac7-00163e002e66.jpg", 
+        "describe": "123", 
+        "id": 18, 
+        "images": [
+          {
+            "candidate_id": 18, 
+            "id": 49, 
+            "path": "/images/vote/55/18/images/eb413c7e-cc6a-11e4-8ac7-00163e002e66.jpg", 
+            "update_time": 1426572031000
+          }, 
+          {
+            "candidate_id": 18, 
+            "id": 48, 
+            "path": "/images/vote/55/18/images/663d1818-cc6a-11e4-8ac7-00163e002e66.jpg", 
+            "update_time": 1426571808000
+          }, 
+          {
+            "candidate_id": 18, 
+            "id": 47, 
+            "path": "/images/vote/55/18/images/5dcb2c42-cc6a-11e4-8ac7-00163e002e66.jpg", 
+            "update_time": 1426571794000
+          }, 
+          {
+            "candidate_id": 18, 
+            "id": 43, 
+            "path": "/images/vote/55/18/images/a53bcb3e-cb95-11e4-8ac7-00163e002e66.jpg", 
+            "update_time": 1426480431000
+          }
+        ], 
+        "is_vote": 0, 
+        "title": "123", 
+        "update_time": 1426572031000, 
+        "upload_user": 80, 
+        "vote_detail_id": 55, 
+        "vote_num": 0
+      }
+    ], 
+    "candidates_num": 2, 
+    "del_vote": false, 
+    "id": 55, 
+    "is_vote": 0, 
+    "participator_num": 0, 
+    "published": false, 
+    "scope_id": 5, 
+    "update_time": 1426572696000, 
+    "update_user_id": 80, 
+    "vote_description": "test vote", 
+    "vote_end_time": 1426572600000, 
+    "vote_num": 0, 
+    "vote_scope": {
+      "alias": "EVERYONE", 
+      "id": 5, 
+      "name": "\u6240\u6709\u4eba", 
+      "scope_type": "VOTE", 
+      "update_time": 1423293871000
+    }, 
+    "vote_start_time": 1426572600000
+  }, 
+  "status": "success"
+}
+
+
+
+
+[{"id":"announcement","name":"公告板"},{"id":"timeline","name":"活动动态"},{"id":"ticket","name":"电子票"},{"id":"vote","name":"投票"},{"id":"sign_in","name":"签到"},{"id":"lottery","name":"抽奖"},{"id":"contests","name":"打分"}]
+
+
+{
+  announcement:{'id':'announcement','name':'公告板','icon_path':'','note':''},
+  timeline:{'id':'timeline','name':'活动动态','icon_path':'','note':''},
+  ticket:{'id':'ticket','name':'电子票','icon_path':'','note':''},
+  vote:{'id':'vote','name':'投票','icon_path':'','note':''},
+  sign_in:{'id':'sign_in','name':'签到','icon_path':'','note':''},
+  lottery:{'id':'lottery','name':'抽奖','icon_path':'','note':''},
+  contests:{'id':'contests','name':'打分','icon_path':'','note':''}
+}
+
+[{"activity_id":243,"add_time":1426496997000,"community_logo":"/images/community/20/logo/c969c558-c963-11e4-8ac7-00163e002e66.png","deleted_sign_in":false,"id":42,"is_done":true,"is_sign_in":false,"published":false,"qr_code":"49114a0ec2519bad219c24867f38dba0","qr_code_path":"/images/images/placeholder.png","receipt_background":"/images/images/placeholder.png","sign_in_end_time":1426562460000,"sign_in_num":0,"sign_in_start_time":1425890280000,"sponsor_logo":"/images/sign/42/sponsor_logo/819f3db4-cbbd-11e4-8ac7-00163e002e66.jpg","sponsor_name":"567","update_time":1426562537000,"update_user":{"id":80,"name":"qwe","nickname":null,"photo_id":"/images/user/80/photo_id/c966e540-c963-11e4-8ac7-00163e002e66.png","sex":null}}]
+
+
+
+{"data": [{
+"id": 48, "sign_in_index": 1, 
+"sign_in_info": {"activity_id": 270, "add_time": 1427420219000, "community_logo": "/images/community/3/logo/50ea3a76-725c-11e4-8ac7-00163e002e66.jpg", "deleted_sign_in": false, "id": 64, "is_done": false, "is_sign_in": false, "published": false, "qr_code": "ec711f9d4f7a1428331a52dce0995713", "qr_code_path": "/images/images/placeholder.png", "receipt_background": "/images/images/placeholder.png", "sign_in_end_time": 1428218700000, "sign_in_num": 10, "sign_in_start_time": 1427680800000, "sponsor_logo": "/images/sign/64/sponsor_logo/a8593b44-d68a-11e4-8ac7-00163e002e66.png", "sponsor_name": "undefined", "update_time": 1427959531000, "update_user": {"id": 10, "name": "Kiddie", "nickname": "Idiot", "photo_id": "/images/user/10/photo_id.jpg", "sex": "MALE"}},
+ "sign_in_time": 1427425590000, "user": {"admission_date": "2013-11-25", "icon": "/images/user/11/icon_8.jpg", "id": 11, "major": "death", "name": "WWW", "nickname": "\u5475\u5475\u597d\u597d\u5e7f\u544a\u6751\u5e72\u90e8", "phone": "18600398031", "roles": [{"description": "normal user", "name": "USER"}], "sex": "FEMALE", "university": {"city": "\u5317\u4eac\u5e02", "id": 1, "name": "\u4e2d\u592e\u6c11\u65cf\u5927\u5b66", "province": "\u5317\u4eac\u5e02"}}}], "status": "success"}

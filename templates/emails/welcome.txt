@@ -1,0 +1,6 @@
+恭喜您, {{ user.name }}
+您的信息已经通过了人工核对,请登录{{url_for('ngapp.home', _external=True)}}
+进行社团管理
+
+谢谢
+i微校团队

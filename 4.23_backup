@@ -1,0 +1,254 @@
+$(function() {
+  var browser= {
+    versions: (function () {
+      var u = navigator.userAgent, app = navigator.appVersion;
+      return {
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+        iPad: u.indexOf('iPad') > -1 //是否iPad
+      };
+    })()
+  };
+
+  $('.banner').unslider({
+    dots: true,
+    autoplay: false
+  });
+  
+  $('.banner li img').each(function(i, element) {
+    var $el = $(element), $parent = $el.parent();
+    if ($el.width()/$parent.width() > $el.height()/$parent.height()) {
+      $el.css({'height': '100%'});
+    } else {
+      $el.css({'width': '100%'});
+    }
+    $el.addClass('show');
+  });
+
+  $('.footer-btn').on('click', function () {
+    if (!browser.versions.mobile) {
+      window.alert('您这里不是移动端，请手机登陆此页面去为女神投票吧！');
+    } else {
+      if (browser.versions.android) {
+        window.location.href = '/static/release/iweixiao_v1.9.5.1.apk';
+      } else if (browser.versions.iPhone || browser.versions.iPad) {
+        window.location.href = 'https://itunes.apple.com/cn/app/i-wei-xiao/id835588974?l=en&mt=8';
+      } else {
+        window.alert('您使用的系统暂不支持，请使用安卓或苹果手机!');
+      }
+    }
+    return false;
+  });
+});
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+
+  -webkit-font-smoothing: antialiased;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: STHeiti,'微软雅黑','Microsoft Yahei',Helmet,Freesans,sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #fff;
+}
+
+body, ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+.banner {
+  position: relative;
+  overflow: auto;
+}
+
+.banner li {
+  list-style: none;
+  height: 320px;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.banner li img {
+  display: none;
+  position: relative;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.banner li img.show {
+  display: block;
+}
+
+.banner ul li {
+  float: left;
+}
+
+.banner .dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  text-align: center;
+}
+
+.banner .dots li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+
+  text-indent: -999em;
+
+  border: 2px solid #fff;
+  border-radius: 6px;
+
+  cursor: pointer;
+  opacity: .4;
+  float: right;
+  -webkit-transition: background .5s, opacity .5s;
+  -moz-transition: background .5s, opacity .5s;
+  transition: background .5s, opacity .5s;
+}
+
+.banner .dots li.active {
+  background: #fff;
+  float: right;
+  opacity: 1;
+}
+
+.banner .info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  padding: 20px;
+}
+
+.banner .info h1 {
+  font-size: 28px;
+  font-weight: 300;
+  text-align: center;
+  /*color: #4affdb;*/
+}
+
+.banner .info p {
+  line-height: 20px;
+  font-size: 14px;
+  color: #fefefe;
+}
+
+.banner .info .nickname {
+  position: absolute;
+  bottom: 8px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.content {
+  padding: 12px 18px 72px;
+}
+
+.content p {
+  font-size: 18px;
+  text-indent:2em;
+  color: #666;
+}
+
+.footer-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  padding: 0 20px;
+  line-height: 60px;
+  font-size: 20px;
+  background-color: #3CBFE0;
+  color: #fff;
+  text-decoration: none
+}
+
+.footer-btn:before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  right: 20px;
+  height: 12px;
+  width: 12px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+h1 {
+  font-size: 28px;
+  font-weight: 300;
+  text-align: center;
+  /*color: #4affdb;*/
+}
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{candidate.title}}</title>
+  <link rel="stylesheet" href="/static/styles/candidate-sharing.css">
+  <link rel="shortcut icon" href="/static/favicon.ico">
+</head>
+<body class="container">
+  <h1>{{candidate.vote_info.activity.subject}}</h1>
+  <div class="banner">
+    <div class="info">
+      <!-- <h1>{{candidate.vote_info.activity.subject}}</h1> -->
+      <!-- <p>{{candidate.remark}}</p> -->
+      <div class="nickname">{{candidate.title}}</div>
+    </div>
+    <ul>
+      {% for image in candidate.images %}
+        <li><img align="center" src="/images/{{image.path}}"></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="content">
+    <p>{{candidate.describe}}</p>
+  </div>
+  <a href="#" class="btn footer-btn">快来 i 微校为Ta投票吧～</a>
+  <script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="/static/bower_components/jquery.event.move/js/jquery.event.move.js"></script>
+  <script type="text/javascript" src="/static/bower_components/jquery.event.swipe/js/jquery.event.swipe.js"></script>
+  <script type="text/javascript" src="/static/bower_components/jquery.unslider/src/unslider.js"></script>
+  <script type="text/javascript" src="/static/scripts/candidate-sharing.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<div id="activity-item" ng-controller="ActivityItemCtrl">
+  <div class="tabs-left">
+    <ul class="nav nav-tabs col-sm-2 col-md-2 col-lg-2">
+      <li ui-sref-active="active">
+      <a ui-sref="activity_item({ id: activity.id })">活动概况</a></li>
+      <li ng-hide="editingActivityId=='-1'" ui-sref-active="active"><a ui-sref="activity_item.stat_plugin" href="#/activity/{{activity.id}}/plugin/stat">活动统计</a></li>
+      <li ng-repeat="plugin in activity.plugins"
+          d-sref="'activity_item.' + plugin.id + '_plugin'"
+          data-name="plugin.name">
+      </li>
+
+      <li ng-hide="editingActivityId=='-1'" ui-sref-active="active" style="margin-left:-30px;">
+        <a ng-click="_addPlugin()" style="cursor:pointer;">
+          <image src="/static/images/function_icon.png" style="width:20px;height:20px;"></image>
+          &nbsp;更多功能
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div ui-view>
+    <div class="col-lg-offset-3 md-offset-3 col-sm-offset-3 col-lg-8  col-md-8 col- col-sm-9">
+      <div class="activity-button-bar">
+      <div class="btn-group">
+        <a class="btn btn-default" ui-sref="activity">
+          <i class="fa fa-reply"></i> 返回</a>
+      </div>
+      &nbsp;
+      <div class="btn-group">
+        <label type="button" class="btn btn-default btn-checkbox"
+            ng-model="activity.published" btn-checkbox ng-if="editingActivityId != -1">
+            <span ng-if="activity.published" style="color:green">
+                已发布 <i class="fa fa-check"></i>
+            </span>
+            <span ng-if="!activity.published">
+                未发布 <i class="fa fa-ban"></i>
+            </span>
+        </label>
+        <!-- <div class="btn-group" ng-if="editingActivityId != -1">
+          <button type="button" class="btn btn-primary" ng-click="_addPlugin()">功能箱&nbsp;<i class="glyphicon glyphicon-briefcase"></i></button>
+          <button type="button" class="btn btn-default">添加新功能&nbsp;<i class="glyphicon glyphicon-briefcase"></i></button>
+          <button type="button" class="btn btn-info 
+              dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li ng-repeat="plugin in plugins">
+              <a ng-click="addPlugin(plugin.id)" class="pulgin-dropdown">
+                {{plugin.name}}
+              </a>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+      &nbsp;
+      <div class="btn-group">
+        <a ng-disabled="activity.top_num==1" class="btn btn-primary" ng-if="editingActivityId != -1" 
+            ng-click="top()">置顶 <i class="fa fa-hand-o-up"></i></a>
+      </div>
+      &nbsp;
+      <div class="btn-group">
+        <a class="btn btn-danger" ng-if="editingActivityId != -1" 
+            ng-click="delete()">删除 <i class="fa fa-trash-o"></i></a>
+      </div>
+    </div>
+      <form method="POST" ng-submit="saveActivity()"
+          class="form-horizontal" role="form"
+          name="activityForm" enctype="multipart/form-data">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="panel-title">活动详情</div>
+          </div>
+          <div class="panel-body">
+            <form-input data-title="'活动主题'" data-name="'subject'">
+              <input name="subject" id="subject" ng-model="activity.subject"
+                  class="form-control" type="text"
+                  ng-readonly="activity.is_register">
+            </form-input>
+            <!--ng-required="true"-->
+            <form-input data-title="'活动地点'" data-name="'location'">
+              <input name="location" id="location" ng-model="activity.location" 
+                  class="form-control" type="text">
+            </form-input>
+            <form-input data-title="'开始时间'" data-name="'start_time'">
+              <datetimepicker datetime="activity.start_time"></datetimepicker>
+            </form-input>
+            <form-input data-title="'结束时间'" data-name="'end_time'">
+              <datetimepicker datetime="activity.end_time"></datetimepicker>
+            </form-input>
+            <form-input data-title="'活动内容'"
+                data-name="'content'">
+              <!-- 添加必填验证 -->
+              <textarea class="form-control" id="content"
+                  ng-model="activity.content"
+                  name="content" rows="5" autocomplete="off">
+              </textarea>
+            </form-input>
+            <form-input data-title="'活动海报'" data-name="'poster'">
+                <div class="fileinput fileinput-new" data-provides="fileinput" ng-controller="CropImageCtrl">
+                  <div ng-if="activity.poster" class="cropArea">
+                    <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
+                  </div>
+                  <!-- <div class="fileinput-preview fileinput-exists thumbnail"></div> -->
+                  <div>
+                    <img ng-src="{{myCroppedImage}}" />
+                  </div>
+                  <div>
+                    <span class="btn btn-default btn-file">
+                      <span class="fileinput-new">选择照片</span>
+                      <span class="fileinput-exists">更换</span>
+                      <input type="file" name="poster" data-file="activity.poster" id="fileInput">
+                    </span>
+                    
+                  </div>
+                </div>
+              </form-input>
+              
+          </div>
+        </div>
+        <button class="btn btn-primary form-control" type="submit">保存</button>
+      </form>
+      
+    </div>
+  </div>
+</div>

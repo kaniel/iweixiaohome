@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>抽奖 - 获奖者名单</title>
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/static/styles/draw.css">
+  <link rel="shortcut icon" href="/static/favicon.ico">
+</head>
+<body class="container">
+  <div class="draw-winner">
+    <div class="winner-item clearfix">
+      <div class="title">一等奖</div>
+      <div class="notice">
+        <div class="item"><div class="avatar"></div><span>No.032 张柏芝</span></div>
+      </div>
+    </div>
+    <div class="winner-item clearfix">
+      <div class="title">二等奖</div>
+      <div class="notice">
+        <div class="item"><div class="avatar"></div><span>No.032 张柏芝</span></div>
+        <div class="item"><div class="avatar"></div><span>No.032 张柏芝</span></div>
+        <div class="item"><div class="avatar"></div><span>No.032 张柏芝</span></div>
+      </div>
+    </div>
+    <div class="winner-item clearfix">
+      <div class="title">三等奖</div>
+      <div class="notice">
+        <div class="item"><div class="avatar"></div><span>No.032 张柏芝</span></div>
+        <div class="item"><div class="avatar"></div><span>No.032 张柏芝</span></div>
+        <div class="item"><div class="avatar"></div><span>No.032 张柏芝</span></div>
+        <div class="item"><div class="avatar"></div><span>No.032 张柏芝</span></div>
+        <div class="item"><div class="avatar"></div><span>No.032 张柏芝</span></div>
+        <div class="item"><div class="avatar"></div><span>No.032 张柏芝</span></div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
+  <script>
+    $(function () {
+      $('.draw-winner .winner-item').each(function () {
+        var $el = $(this);
+        $el.find('.notice').css({left: ($el.find('.title').width() + 28) + 'px'});
+        $el.css({height: $el.find('.notice').height()});
+      });
+
+      var id = parseInt(window.location.href.substr(window.location.href.indexOf('#') + 1), 10);
+
+      $.getJSON('/api/auth/refreshtoken', function (data) {
+        window.auth_token = data.data.auth_token;
+        $.ajax({
+          type: 'GET',
+          url: '/api/lotteries/' + id + '/win_users',
+          headers: {
+            'Authentication-Token': data.data.auth_token
+          },
+          dataType: 'json',
+          success: function (data) {
+            console.log(data);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
