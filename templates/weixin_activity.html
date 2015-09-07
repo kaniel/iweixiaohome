@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>校园生活尽在 i微校</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <link href="/static/styles/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/static/styles/weixin_activity.css">
+  <link rel="shortcut icon" href="/static/favicon.ico">
+</head>
+<body>
+    <div id='ios_popweixin'>
+        <div class='tip top2bottom'>
+            <img align="center" style="width:100%;height:100%;" src='/static/images/safari.png'/>
+        </div>
+    </div>
+    <div id='android_popweixin'>
+        <div class='tip top2bottom'>
+            <img align="center" style="width:100%;height:100%;" src='/static/images/android_note.png'/>
+        </div>
+    </div>
+    <div class="container">
+        <div class="activity-card">
+            <img class="cover" src="/images/{{activity.poster}}" />
+            <img class="logo" src="/images/{{activity.host.logo}}/thumbnail" />
+            <h3>{{activity.host.name}}</h3>
+            <div class="activity">
+                <div class="activity-title">{{activity.subject}}</div>
+                <div class="activity-content">{{activity.content}}</div>
+            </div>
+        </div>
+
+        <div class="comment-panel">
+            {% for comment in comments %}
+            <div class="comment">
+                <div class="comment-content">
+                    {{comment.content}}
+                </div>
+                {% if comment.image %}
+                <div class="comment-image">
+                    <img src="{{comment.image}}/thumbnail"/>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="download">
+            <a class="link" id="download">
+                立即下载 i微校
+            </a>
+            <!-- {% if ios %}
+            <a class="link" href="https://itunes.apple.com/cn/app/i-wei-xiao/id835588974?mt=8">
+                <i class="fa fa-download"></i> 立即下载 i微校
+            </a>
+            {% else %}
+            <a class="link" href="http://www.iweixiao.cn/iweixiao_v1.9.4.apk">
+                <i class="fa fa-download"></i> 立即下载 i微校
+            </a>
+            {% endif %} -->
+        </div>
+    </div>
+    <script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/static/scripts/weixin_activity.js"></script>
+</body>
+</html>

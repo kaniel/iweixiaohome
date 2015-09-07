@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "code": "8ec2be09-f4b4-4456-8dfb-33e227659e0e", 
+      "create_time": 1416994142000, 
+      'update_time': 1416994142000,
+      "number": "001", 
+      "status": "USED", 
+      "ticket": {
+        "activity": {
+          "id": 133, 
+          "location": "\u5730\u4e0b\u4e8c\u5c42", 
+          "start_time": 1416999600000, 
+          "subject": "\u5409\u4ed6\u4e0e\u5409\u4ed6\u4e89\u950b\u76f8\u5bf9\uff0c\u6211\u4eec\u7684\u6d3b\u52a8"
+        }, 
+        "community_logo": "/images/community/3/logo/e81ad6f0-dea2-11e4-8ac7-00163e002e66.jpg", 
+        "content": "\u5927\u5bb6\u653e\u5fc3\uff0c\u7edd\u5bf9\u6709\u7968\uff01", 
+        "cost": "500", 
+        "cover": "/images/ticket/12/cover/70147188-754e-11e4-8ac7-00163e002e66.jpg", 
+        "create_time": 1416994047000, 
+        "end_time": 1417012200000, 
+        "has_ticket": false, 
+        "id": 12, 
+        "is_done": false, 
+        "left": 29, 
+        "location": "\u5730\u4e0b2\u5c42", 
+        "logo": "/images/ticket/12/logo/700ecf44-754e-11e4-8ac7-00163e002e66.png", 
+        "password": "747012", 
+        "start_time": 1416994080000, 
+        "total": 30
+      }, 
+      "user": {
+        "admission_date": "1980-07-07", 
+        "icon": "/images/user/27/icon/5b143636-c7a8-11e4-8ac7-00163e002e66.jpg", 
+        "id": 27, 
+        "major": "\u56fd\u9645\u8d38\u6613\u4e13\u4e1a", 
+        "name": "Wukelol ", 
+        "nickname": "\u738b\u5c0f\u4e94", 
+        "phone": "18611540827", 
+        "roles": [
+          {
+            "description": "normal user", 
+            "name": "USER"
+          }
+        ], 
+        "sex": "MALE", 
+        "university": {
+          "city": "\u5317\u4eac\u5e02", 
+          "id": 1, 
+          "name": "\u4e2d\u592e\u6c11\u65cf\u5927\u5b66", 
+          "province": "\u5317\u4eac\u5e02"
+        }
+      }
+    }
+  ], 
+  "status": "success"
+}
+
+
+//test data
+{
+  "data": [{"update_time": 1416994142000,"number": "001", "status": "USED", "ticket": {}, user": {"icon": "/images/user/27/icon/5b143636-c7a8-11e4-8ac7-00163e002e66.jpg","id": 27, "major": "\u56fd\u9645\u8d38\u6613\u4e13\u4e1a", "name": "Wukelol ", "nickname": "\u738b\u5c0f\u4e94", "sex": "MALE"}}], 
+  "status": "success"
+}

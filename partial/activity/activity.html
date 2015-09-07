@@ -1,0 +1,108 @@
+<div class="col-sm-12 col-md-12 col-lg-12"
+    ng-controller="ActivityCtrl">
+    <a ng-click="createActivity()"
+        class="btn btn-primary pull-right">创建活动</a>
+  <table ng-table="tableParams"
+      class="table table-striped table-responsive">
+    <tbody>
+      <tr ng-repeat="activity in $data">
+        <td data-title="'活动主题'" header-class="text-left">
+          <a ui-sref="activity_item({ id: activity.id })">
+            {{activity.subject}}
+          </a>
+        </td>
+        <td data-title="'社团'" header-class="text-left">
+          {{activity.host.name}}
+        </td>
+        <td data-title="'时间'" header-class="text-left">
+          {{activity.start_time | date : 'yyyy-MM-dd HH:mm'}} -- {{activity.end_time | date : 'yyyy-MM-dd HH:mm'}}
+        </td>
+        <td data-title="'功能'"
+            header-class="text-left" class="activity-content">
+          <!-- <li ng-repeat="plugin in activity.plugins">
+              <a ng-click="gotoPlugin(activity.id, plugin.id)" class="pulgin-dropdown">
+                {{plugin.name}}
+              </a>
+          </li> -->
+          <div ng-repeat="plugin in activity.plugins">
+              <img class="logo" ng-src="{{plugin.icon_path}}" style="width:13px;" />
+              <a ng-click="gotoPlugin(activity.id, plugin.id)" class="pulgin-dropdown">
+                {{plugin.name}}
+              </a>
+          </div>
+          <!-- <li>
+            <a ng-click="gotoPlugin(activity.id, '')" class="pulgin-dropdown">
+              添加功能
+            </a>
+          </li> -->
+        </td>
+        <td data-title="'操作'">
+          <label type="button" class="btn btn-default btn-checkbox"
+              ng-click="invTogglePublish(activity.id,activity.published)" style="margin-bottom:3px;width:86px;" ng-disabled="activity.published">
+              <span ng-if="activity.published" style="color:green">
+                  已发布 <i class="fa fa-check"></i>
+              </span>&nbsp;
+              <span ng-if="!activity.published">
+                  发&nbsp;&nbsp;布 <i class="fa fa-volume-up"></i>
+              </span>&nbsp;
+          </label>&nbsp;
+          <label type="button" class="btn btn-default btn-checkbox"
+              ng-click="invTogglePublish(activity.id,activity.published)" style="margin-bottom:3px;" ng-disabled="!activity.published">
+              <span>
+                  取消发布 <i class="fa fa-ban"></i>
+              </span>
+          </label>&nbsp;
+          <!-- <label type="button" class="btn btn-default btn-checkbox"
+              ng-model="activity.published" btn-checkbox ng-click="setTop()" ng-if="0" style="margin-bottom:3px;">
+              <span ng-if="activity.published" style="color:green">
+                  已置顶 <i class="fa fa-star"></i>
+              </span>
+              <span ng-if="!activity.published">
+                  未置顶 <i class="fa fa-star-o"></i>
+              </span>
+          </label> -->
+          <label type="button" class="btn btn-default btn-checkbox" ui-sref="activity_item({ id: activity.id })" style="width:86px;margin-bottom:3px;">
+            <span>
+              编&nbsp;&nbsp;辑&nbsp;&nbsp;<i class="fa fa-pencil-square-o"></i>
+            </span>
+          </label>&nbsp;
+          <label type="button" class="btn btn-danger btn-checkbox" ng-click="deleteActivity(activity.id)" style="width:86px;margin-bottom:3px;">
+            <span>
+              删&nbsp;&nbsp;除&nbsp;&nbsp;<i class="fa fa-trash-o"></i>
+            </span>
+          </label>&nbsp;
+          <label type="button" class="btn btn-info btn-checkbox" ng-click="top(activity.published, activity.admin_top, activity.id)" style="width:86px;margin-bottom:3px;" ng-disabled="activity.top_num == 1">
+            <span ng-if="!activity.top_num || activity.top_num == 0">
+                置&nbsp;&nbsp;顶 <i class="fa fa-hand-o-up"></i>
+            </span>
+            <span ng-if="activity.top_num == 1">
+                置顶过 <i class="fa fa-check"></i>
+            </span>
+          </label>
+          <!-- <a ui-sref="activity_item({ id: activity.id })"
+              class="fa fa-pencil-square-o btn">&nbsp;编辑</a>
+          <a ng-click="deleteActivity(activity.id)"
+              class="fa fa-trash-o btn">&nbsp; 删除</a> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- Confirm Modal -->
+  <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+          <!-- <h4 class="modal-title" id="myModalLabel">{{confirm.title}}</h4> -->
+        </div>
+        <div class="modal-body">
+          {{confirm.message}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal"><span aria-hidden="true">取消</span></button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="confirmModal();">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
