@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="post-container">
-      <p class="post-content"><font ng-bind="comment.content" emojify></font></p>
+      <p class="post-content"><font ng-bind="comment.content"></font></p>
       <div class="images col-md-12" ng-if="comment.images && comment.images.length>0">
         <img ng-repeat="image in comment.images"
             ng-src="{{image}}?width=160&height=160" ng-click="viewImage(image)"

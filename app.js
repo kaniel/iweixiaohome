@@ -1,4 +1,4 @@
-angular.module('iwx', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'ngTable', 'angular-loading-bar', 'monospaced.qrcode', 'chart.js', 'treeControl', 'emoji', 'emojify']);
+angular.module('iwx', ['ui.bootstrap', 'ui.utils', 'ui.router']);
 
 angular.module('iwx').constant('eventType', {
     LOGIN: 'login',
@@ -374,9 +374,9 @@ angular.module('iwx').run(function($rootScope) {
 
 angular.module('iwx').controller('MainCtrl', function ($rootScope, $scope, $timeout, $modal, userService, eventType, notificationType) {
     $scope.user = null;
-    userService.load(true).then(function(user) {
+    /*userService.load(true).then(function(user) {
         $scope.user = user;
-    });
+    });*/
     var notificationPromise = null;
 
     $scope.notification = null;
