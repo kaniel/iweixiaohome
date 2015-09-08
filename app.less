@@ -37,7 +37,6 @@
   background-color: silver;
 }
 body {
-  //font-family: "Helvetica Neue","Hiragino Sans GB","Segoe UI","Microsoft Yahei","微软雅黑",Tahoma,Arial,STHeiti,sans-serif;
   background: url(/static/images/bg.jpg);
   background-color: #F6F6F6;
   //padding-bottom: 20px;
@@ -99,12 +98,12 @@ td {
 causes the modal to fade in rather than slide in. */
 @modal-backdrop-bg: white;
 .modal {
-	&.fade {
-		.transition(opacity .3s);
-	}
-	&.fade .modal-dialog {
-		.translate(0,0);
-	}
+  &.fade {
+    .transition(opacity .3s);
+  }
+  &.fade .modal-dialog {
+    .translate(0,0);
+  }
 }
 
 .modal-dialog {
@@ -1516,25 +1515,69 @@ a {
   z-index: 100;
   margin-bottom: 3px;
 }
+.transform (@x, @y) {
+  -webkit-transform: translate(@x, @y);
+  -moz-transform: translate(@x, @y);
+  -ms-transform: translate(@x, @y);
+}
 .login_after_img {
   width: 100%;
   margin-top: -30px;
 }
 .login_before_img {
-  width: 900px;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  width: 50%;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 .login_before_img_last {
-  width: 900px;
-  padding-top: 5%;
+  width: 50%;
+  padding-top: 10%;
   padding-bottom: 5%;
-  -webkit-transform: translate(155px, 0);
-  -moz-transform: translate(155px, 0);
-  -ms-transform: translate(155px, 0);
+  //padding-bottom: 10%;
+  //.transform(130px, 0);
 }
 .boringKiller {
-  -webkit-transform: translate(-480px, 240px);
-  -moz-transform: translate(-480px, 240px);
-  -ms-transform: translate(-480px, 240px);
+  //.transform(-480px, 300px);
+}
+.bg_image(@url, @position) {
+  background: @url;
+  text-align: @position;
+}
+.bg_upper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+.bg_yellow {
+  .bg_image(url(/static/images/yellow_bg_cn.png), center);
+}
+.bg_orange {
+  .bg_image(url(/static/images/orange_bg_cn.png), center);
+}
+.bg_blue {
+  .bg_image(url(/static/images/blue_bg_cn.png), center);
+}
+.bg_qrcode {
+  .bg_image(url(/static/images/qrcode_bg.png), center);
+}
+.download {
+  position: absolute;
+  top: 15%;
+  left: 55%;
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+  margin-top: 14%;
+  margin-left: -2%;
+}
+.down_ios {
+  width: 45%;
+}
+.down_android {
+  width: 45%;
+  float: right;
+}
+.company_info {
+  font-weight: bold;
 }
