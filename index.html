@@ -6,10 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
   <link rel="shortcut icon" href="/static/favicon.ico">
-  <!-- <link rel="stylesheet" type="text/css" href="bower_components/angular-chart.js/dist/angular-chart.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/angular-chart.js/dist/angular-chart.css">
   <link rel="stylesheet" type="text/css" href="bower_components/angular-loading/angular-loading.css">
-  <link rel="stylesheet" type="text/css" href="bower_components/ngImgCrop/compile/unminified/ng-img-crop.css"> -->
-  <!-- <link rel="stylesheet" type="text/css" href="bower_components/swiper/dist/css/swiper.css"> -->
+  <link rel="stylesheet" type="text/css" href="bower_components/ngImgCrop/compile/unminified/ng-img-crop.css">
   <link href="app.less" type="text/css" rel="stylesheet/less">
 </head>
 <body>
@@ -30,7 +29,7 @@
   <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
   <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
   <script src="bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.js"></script>
-  <!-- <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
   <script src="bower_components/moment/locale/zh-cn.js"></script>
   <script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
   <script src="bower_components/ng-table/dist/ng-table.js"></script>
@@ -38,11 +37,11 @@
   <script src="bower_components/qrcode-generator/js/qrcode.js"></script>
   <script src="bower_components/qrcode-generator/js/qrcode_UTF8.js"></script>
   <script src="bower_components/Chart.js/Chart.min.js"></script>
-  <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script> -->
-  <!-- add angular-tree-control js
-  <script src="bower_components/angular-tree-control/angular-tree-control.js"></script> -->
-  <!-- add ani-machine js
-  <script src="bower_components/ani-machine/dist/ani-machine.min.js"></script> -->
+  <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+  <!-- add angular-tree-control js -->
+  <script src="bower_components/angular-tree-control/angular-tree-control.js"></script>
+  <!-- add ani-machine js -->
+  <script src="bower_components/ani-machine/dist/ani-machine.min.js"></script>
   <!-- Main App JS -->
   <script src="app.js"></script>
   <!--plugin config.js-->
@@ -90,7 +89,31 @@
         <div class="collapse navbar-collapse" id="navbar-item">
           <ul class="nav navbar-nav">
             <li ui-sref-active="active"><a href="http://test.iweixiao.cn" target="_blank">社团管理后台</a></li>
+            <!-- <li ui-sref-active="active" ng-show="user.role.name === 'ADMIN'"><a ui-sref="community">社团管理</a></li>
+            <li ui-sref-active="active" ng-show="user.role.name === 'IWX_ADMIN'"><a ui-sref="community_iWX">社团管理</a></li>
+            <li ui-sref-active="active" ng-show="user.role.name === 'UN_ADMIN'"><a ui-sref="community_university">社团管理</a></li>
+            <li ui-sref-active="active" ng-show="user.role.name === 'ADMIN'"><a ui-sref="activity">活动管理</a></li>
+            <li ui-sref-active="active" ng-show="user.role.name === 'IWX_ADMIN'"><a ui-sref="activity_iWX">活动管理</a></li>
+            <li ui-sref-active="active" ng-show="user.role.name === 'UN_ADMIN'"><a ui-sref="activity_university">活动管理</a></li>
+            <li ui-sref-active="active" ng-show="user.role.name === 'ADMIN'"><a ui-sref="message">消息管理</a></li>
+            <li ui-sref-active="active" ng-show="user.role.name === 'IWX_ADMIN'"><a ui-sref="message_iWX">消息管理</a></li>
+            <li ui-sref-active="active" ng-show="user.role.name === 'UN_ADMIN'"><a ui-sref="message_university">消息管理</a></li>
+            <li ui-sref-active="active" ng-show="user.role.name === 'ADMIN'"><a ui-sref="certificate">电子凭证管理</a></li>
+            <li ui-sref-active="active" ng-show="user.role.name === 'ADMIN'"><a ui-sref="profile">账户设置</a></li>
+            <li ui-sref-active="active" ng-show="user.role.name === 'IWX_ADMIN'"><a ui-sref="profile_iwx">账户设置</a></li>
+            <li ui-sref-active="active" ng-show="user.role.name === 'UN_ADMIN'"><a ui-sref="profile_university">账户设置</a></li>
+            <li ui-sref-active="active" ng-show="user.role.name === 'SUPER_USER'"><a ui-sref="role_manage_super">角色管理</a></li> -->
           </ul>
+          <!-- <ul ng-show="!user" class="nav navbar-nav pull-right">
+            <li ui-sref-active="active"><a ui-sref="login({next:'welcome'})">登录</a></li>
+            <li ui-sref-active="active"><a ui-sref="register">注册</a></li>
+          </ul> -->
+          <!-- <ul ng-show="user" class="nav navbar-nav pull-right">
+            <li><a ng-show="user.role.name === 'ADMIN'" ui-sref="profile">{{user.name || user.nickname}}</a></li>
+            <li><a ng-show="user.role.name === 'IWX_ADMIN'" ui-sref="profile_iwx">{{user.name || user.nickname}}</a></li>
+            <li><a ng-show="user.role.name === 'UN_ADMIN'" ui-sref="profile_university">{{user.name || user.nickname}}</a></li>
+            <li><a ng-click="logout()">登出</a></li>
+          </ul> -->
         </div>
       </div>
     </nav><br/><br/><br/><br/>
@@ -135,16 +158,16 @@
         </div>
       </div>
     </div>
-    <!-- <div id="content" class="container">
+    <div id="content" class="container">
       <div ui-view></div>
-    </div> -->
+    </div>
     <!-- Notification Modal -->
-    <!-- <div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index:1200;">
+    <div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index:1200;">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
-            <h4 class="modal-title" id="myModalLabel">{{popmsg.title}}</h4>
+            <!-- <h4 class="modal-title" id="myModalLabel">{{popmsg.title}}</h4> -->
           </div>
           <div class="modal-body">
             {{popmsg.message}}
@@ -154,7 +177,7 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 </body>
 </html>
