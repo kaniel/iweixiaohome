@@ -27,7 +27,11 @@
 @import "directive/post/post.less";
 @import "directive/image-fixed.less";
 /* Add Component LESS Above */
-
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
 /* Required for Angular UI Bootstrap */
 .nav, .pagination, .carousel a { cursor: pointer; }
 @top-z:  9999;
@@ -1521,7 +1525,7 @@ a {
 }
 .login_after_img {
   width: 100%;
-  margin-top: -30px;
+  //margin-top: -30px;
 }
 .login_before_img {
   width: 50%;
@@ -1536,6 +1540,7 @@ a {
   //.transform(130px, 0);
 }
 .boringKiller {
+  width: 35%;
   //.transform(-480px, 300px);
 }
 .bg_image(@url, @position) {
@@ -1547,6 +1552,9 @@ a {
   top: 0;
   width: 100%;
   z-index: -1;
+}
+.bg_logo {
+  .bg_image(url(/static/images/login_before_back.jpg), center);
 }
 .bg_yellow {
   .bg_image(url(/static/images/yellow_bg_cn.png), center);
@@ -1562,12 +1570,12 @@ a {
 }
 .download {
   position: absolute;
-  top: 15%;
+  top: 70%;
   left: 55%;
   display: inline-block;
-  width: 20%;
+  width: 15%;
   vertical-align: top;
-  margin-top: 14%;
+  //margin-top: 14%;
   margin-left: -2%;
 }
 .down_ios {
@@ -1575,7 +1583,7 @@ a {
 }
 .down_android {
   width: 45%;
-  float: right;
+  //float: right;
 }
 .company_info {
   font-weight: bold;
