@@ -89,39 +89,15 @@
         <div class="collapse navbar-collapse" id="navbar-item">
           <ul class="nav navbar-nav">
             <li ui-sref-active="active"><a href="http://test.iweixiao.cn" target="_blank">社团管理后台</a></li>
-            <!-- <li ui-sref-active="active" ng-show="user.role.name === 'ADMIN'"><a ui-sref="community">社团管理</a></li>
-            <li ui-sref-active="active" ng-show="user.role.name === 'IWX_ADMIN'"><a ui-sref="community_iWX">社团管理</a></li>
-            <li ui-sref-active="active" ng-show="user.role.name === 'UN_ADMIN'"><a ui-sref="community_university">社团管理</a></li>
-            <li ui-sref-active="active" ng-show="user.role.name === 'ADMIN'"><a ui-sref="activity">活动管理</a></li>
-            <li ui-sref-active="active" ng-show="user.role.name === 'IWX_ADMIN'"><a ui-sref="activity_iWX">活动管理</a></li>
-            <li ui-sref-active="active" ng-show="user.role.name === 'UN_ADMIN'"><a ui-sref="activity_university">活动管理</a></li>
-            <li ui-sref-active="active" ng-show="user.role.name === 'ADMIN'"><a ui-sref="message">消息管理</a></li>
-            <li ui-sref-active="active" ng-show="user.role.name === 'IWX_ADMIN'"><a ui-sref="message_iWX">消息管理</a></li>
-            <li ui-sref-active="active" ng-show="user.role.name === 'UN_ADMIN'"><a ui-sref="message_university">消息管理</a></li>
-            <li ui-sref-active="active" ng-show="user.role.name === 'ADMIN'"><a ui-sref="certificate">电子凭证管理</a></li>
-            <li ui-sref-active="active" ng-show="user.role.name === 'ADMIN'"><a ui-sref="profile">账户设置</a></li>
-            <li ui-sref-active="active" ng-show="user.role.name === 'IWX_ADMIN'"><a ui-sref="profile_iwx">账户设置</a></li>
-            <li ui-sref-active="active" ng-show="user.role.name === 'UN_ADMIN'"><a ui-sref="profile_university">账户设置</a></li>
-            <li ui-sref-active="active" ng-show="user.role.name === 'SUPER_USER'"><a ui-sref="role_manage_super">角色管理</a></li> -->
           </ul>
-          <!-- <ul ng-show="!user" class="nav navbar-nav pull-right">
-            <li ui-sref-active="active"><a ui-sref="login({next:'welcome'})">登录</a></li>
-            <li ui-sref-active="active"><a ui-sref="register">注册</a></li>
-          </ul> -->
-          <!-- <ul ng-show="user" class="nav navbar-nav pull-right">
-            <li><a ng-show="user.role.name === 'ADMIN'" ui-sref="profile">{{user.name || user.nickname}}</a></li>
-            <li><a ng-show="user.role.name === 'IWX_ADMIN'" ui-sref="profile_iwx">{{user.name || user.nickname}}</a></li>
-            <li><a ng-show="user.role.name === 'UN_ADMIN'" ui-sref="profile_university">{{user.name || user.nickname}}</a></li>
-            <li><a ng-click="logout()">登出</a></li>
-          </ul> -->
         </div>
       </div>
     </nav>
     
-    <div>
-      <div class="row">
-        <div class="col-md-12 col-sm-12" style="padding-right: 0px;margin-top: 50px;">
-          <div class="download">
+    <!-- <section class="content-section text-center" style="padding-top: 50px;">
+      <div class="download-section" style="padding-right: 0px;">
+        <div class="container">
+          <div class="col-sm-4 col-sm-offset-6" style="background-color:#3EBBFA;position:relative;top:210px;padding-top:20px;padding-bottom:20px;filter:alpha(opacity=80);-moz-opacity:0.8;opacity: 0.8;">
             <a href="https://itunes.apple.com/us/app/i-wei-xiao/id835588974?mt=8">
               <img class="down_ios" src="/static/images/iphone@2x.png">
             </a>
@@ -129,35 +105,122 @@
               <img class="down_android" src="/static/images/and.png">
             </a>
           </div>
-          <img class="login_after_img" src="/static/images/cn_logo_image.png">
         </div>
       </div>
-      <div class="row bg_yellow">
-        <div class="col-md-12 col-sm-12">
-          <img class="login_before_img" src="/static/images/yellow_front_cn.png">
+    </section> -->
+
+    <!-- <div class="row">
+      <div class="col-sm-12" style="padding-right: 0px;margin-top: 50px;">
+        <div class="download">
+          <a href="https://itunes.apple.com/us/app/i-wei-xiao/id835588974?mt=8">
+            <img class="down_ios" src="/static/images/iphone@2x.png">
+          </a>
+          <a href="http://www.iweixiao.cn/iweixiao_v2.0.apk">
+            <img class="down_android" src="/static/images/and.png">
+          </a>
         </div>
+        <img class="login_after_img" src="/static/images/cn_logo_image.png">
       </div>
-      <div class="row bg_orange">
-        <div class="col-md-12 col-sm-12">
-          <img class="login_before_img" src="/static/images/orange_front_cn.png">
+    </div> -->
+    
+    <!-- <div class="row bg_yellow">
+      <div class="container" style="padding-top: 10%; padding-bottom: 10%;">
+        <div class="col-sm-5 col-sm-offset-1">
+          <img style="width: 100%;" src="/static/images/iweixiao.cn/first_left.png">
         </div>
-      </div>
-      <div class="row bg_blue">
-        <div class="col-md-12 col-sm-12">
-          <img class="login_before_img" src="/static/images/blue_front_cn.png">
-        </div>
-      </div>
-      <div class="row bg_qrcode">
-        <div class="col-md-12 col-sm-12">
-          <img class="login_before_img_last" src="/static/images/qrcode.png">
-        </div>
-      </div>
-      <div class="row bg_qrcode">
-        <div class="col-md-6 col-md-offset-3 col-sm-4">
-          <img class="boringKiller" src="/static/images/company_name.png">
+        <div class="col-sm-5">
+          <img style="width: 100%;" src="/static/images/iweixiao.cn/first_right.png">
         </div>
       </div>
     </div>
+    <div class="row bg_orange">
+      <div class="container" style="padding-top: 10%; padding-bottom: 10%;">
+        <div class="col-sm-5 col-sm-offset-1">
+          <img style="width: 100%;" src="/static/images/iweixiao.cn/second_left.png">
+        </div>
+        <div class="col-sm-5">
+          <img style="width: 100%;" src="/static/images/iweixiao.cn/second_right.png">
+        </div>
+      </div>
+    </div>
+    <div class="row bg_blue">
+      <div class="container" style="padding-top: 10%; padding-bottom: 10%;">
+        <div class="col-sm-5 col-sm-offset-1">
+          <img style="width: 100%;" src="/static/images/iweixiao.cn/third_left.png">
+        </div>
+        <div class="col-sm-5">
+          <img style="width: 100%;" src="/static/images/iweixiao.cn/third_right.png">
+        </div>
+      </div>
+    </div>
+    <div class="row bg_qrcode">
+      <div class="container" style="padding-top: 10%; padding-bottom: 10%; padding-left: 3%;">
+        <div class="col-sm-3 col-sm-offset-1">
+          <img style="width: 100%;" src="/static/images/iweixiao.cn/qrcode_left.png">
+        </div>
+        <div class="col-sm-3">
+          <img style="width: 100%;" src="/static/images/iweixiao.cn/qrcode_middle.png">
+        </div>
+        <div class="col-sm-3">
+          <img style="width: 100%;" src="/static/images/iweixiao.cn/qrcode_right.png">
+        </div>
+      </div>
+    </div>
+    <div class="row bg_qrcode">
+      <footer class="bs-docs-footer">
+        <div class="container">
+          <p style="font-weight: bold;">
+            Copyright © Boring Killer Ltd. 京ICP备13042578号<br/>
+            "北京博灵凯乐科技有限责任公司" 版权所有
+          </p>
+        </div>
+      </footer>
+    </div> -->
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12" style="padding-right: 0px;margin-top: 50px;">
+        <div class="download">
+          <a href="https://itunes.apple.com/us/app/i-wei-xiao/id835588974?mt=8">
+            <img class="down_ios" src="/static/images/iphone@2x.png">
+          </a>
+          <a href="http://www.iweixiao.cn/iweixiao_v2.0.apk">
+            <img class="down_android" src="/static/images/and.png">
+          </a>
+        </div>
+        <img class="login_after_img" src="/static/images/cn_logo_image.png">
+      </div>
+    </div>
+    <div class="row bg_yellow">
+      <div class="col-md-12 col-sm-12">
+        <img class="login_before_img" src="/static/images/yellow_front_cn.png">
+      </div>
+    </div>
+    <div class="row bg_orange">
+      <div class="col-md-12 col-sm-12">
+        <img class="login_before_img" src="/static/images/orange_front_cn.png">
+      </div>
+    </div>
+    <div class="row bg_blue">
+      <div class="col-md-12 col-sm-12">
+        <img class="login_before_img" src="/static/images/blue_front_cn.png">
+      </div>
+    </div>
+    <div class="row bg_qrcode">
+      <div class="col-md-12 col-sm-12">
+        <img class="login_before_img_last" src="/static/images/qrcode.png">
+      </div>
+    </div>
+    <div class="row bg_qrcode">
+      <footer class="bs-docs-footer">
+        <div class="container">
+          <p class="company_info">
+            Copyright © Boring Killer Ltd. 京ICP备13042578号<br/>
+            "北京博灵凯乐科技有限责任公司" 版权所有&nbsp;<a href="http://iweixiao.cn/privacy.html" target="_blank">隐私政策</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+
     <div id="content" class="container-fluid">
       <div ui-view></div>
     </div>
