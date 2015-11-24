@@ -372,7 +372,51 @@ angular.module('iwx').run(function($rootScope) {
 
 });
 
-angular.module('iwx').controller('MainCtrl', function ($rootScope, $scope, $timeout, $modal, userService, eventType, notificationType) {
+angular.module('iwx').controller('MainCtrl', function ($rootScope, $scope, $timeout, $modal, $window, userService, eventType, notificationType) {
+
+    var browser= {
+        versions: (function () {
+            var u = navigator.userAgent, app = navigator.appVersion;
+            return {
+                mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器
+                iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+                iPad: u.indexOf('iPad') > -1 , //是否iPad
+                weixin: u.indexOf('MicroMessenger') > -1, //是否微信
+                safari: u.match(/Safari/i) === "Safari", //是否为safari
+                webApp: u.indexOf('Safari') === -1 //是否web应该程序，没有头部与底部
+            };
+        })()
+    };
+    //下载ios version
+    $scope.download_ios_v = function () {
+        if (!browser.versions.mobile) {
+            $window.location.href = 'https://itunes.apple.com/cn/app/i-wei-xiao/id835588974?l=en&mt=8;';
+        } else {
+            if (browser.versions.iPhone || browser.versions.iPad) {
+                if (browser.versions.weixin) {
+                    $scope.ios_popweixin = true;
+                } else {
+                    $window.location.href = 'https://itunes.apple.com/cn/app/i-wei-xiao/id835588974?l=en&mt=8';
+                }
+            } else {
+                $window.alert('您使用的系统暂不支持，请使用苹果手机!');
+            }
+        }
+    };
+    //下载android version
+    $scope.download_and_v = function () {
+        if (!browser.versions.mobile) {
+            $window.location.href = '/static/release/20151119/iweixiao20151119_v2.21.apk';
+        } else {
+            if (browser.versions.android) {
+               $window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.boringkiller.xgm'; 
+            } else {
+                $window.alert('您使用的系统暂不支持，请使用安卓手机!');
+            }
+        }
+    };
     $scope.user = null;
     /*userService.load(true).then(function(user) {
         $scope.user = user;

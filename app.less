@@ -1569,24 +1569,40 @@ a {
   .bg_image(url(/static/images/qrcode_bg.png), center);
 }
 .download {
-  position: absolute;
-  top: 70%;
-  left: 55%;
-  display: inline-block;
-  width: 15%;
-  vertical-align: top;
-  //margin-top: 14%;
-  margin-left: -2%;
+  position: relative;
+  top: 300px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 3%;
+  filter: alpha(opacity=100);
+  -moz-opacity: 1.0;
+  opacity: 1.0;
+}
+.download_link {
+  margin-bottom: 5px;
 }
 .down_ios {
-  width: 45%;
+  width: 155px;
+  height: 50px;
 }
 .down_android {
-  width: 45%;
-  //float: right;
+  width: 155px;
+  height: 50px;
 }
 .company_info {
   font-weight: bold;
+}
+.content_img {
+  width: 100%;
+}
+.content_div {
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+.content_div_last {
+  padding-top: 10%;
+  padding-bottom: 7%;
+  padding-left: 4%;
 }
 .download-section {
   width: 100%;
@@ -1605,4 +1621,75 @@ a {
   padding-bottom: 20px;
   color: #FFF;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/*ios 提示图片样式*/
+.ios_popweixin {
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  position:fixed;
+  z-index:1000;
+  background:rgba(0,0,0,.5);
+  top:0;
+  left:0;
+  display:block;
+}
+.ios_popweixin .tip {
+  width:100%;
+  /*background:#fff;*/
+  z-index:1001;
+}
+.top2bottom {
+  -webkit-animation:top2bottom 1.2s ease;
+  -moz-animation:top2bottom 1.2s ease;
+  -o-animation:top2bottom 1.2s ease;
+  animation:top2bottom 1.2s ease;
+  -webkit-animation-fill-mode:backwards;
+  -moz-animation-fill-mode:backwards;
+  -o-animation-fill-mode:backwards;
+  animation-fill-mode:backwards
+}
+.animate-delay-1 {
+  -webkit-animation-delay:1s;
+  -moz-animation-delay:1s;
+  -o-animation-delay:1s;
+  animation-delay:1s
+}
+@-webkit-keyframes top2bottom {
+  0% {
+    -webkit-transform:translateY(-300px);
+    opacity:.6
+  }
+  100% {
+    -webkit-transform:translateY(0px);
+    opacity:1
+  }
+}
+@keyframes top2bottom {
+  0% {
+    transform:translateY(-300px);
+    opacity:.6
+  }
+  100% {
+    transform:translateY(0px);
+    opacity:1
+  }
+}
+/*android 提示图片样式*/
+.android_popweixin {
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  position:fixed;
+  z-index:1000;
+  background:rgba(0,0,0,.5);
+  top:0;
+  left:0;
+  display:block;
+}
+.android_popweixin .tip {
+  width:100%;
+  /*background:#fff;*/
+  z-index:1001;
 }
