@@ -392,7 +392,7 @@ angular.module('iwx').controller('MainCtrl', function ($rootScope, $scope, $time
     //下载ios version
     $scope.download_ios_v = function () {
         if (!browser.versions.mobile) {
-            $window.location.href = 'https://itunes.apple.com/cn/app/i-wei-xiao/id835588974?l=en&mt=8&output=embed';
+            $window.location.href = 'https://itunes.apple.com/cn/app/i-wei-xiao/id835588974?l=en&mt=8';
         } else {
             if (browser.versions.iPhone || browser.versions.iPad) {
                 if (browser.versions.weixin) {
