@@ -408,7 +408,7 @@ angular.module('iwx').controller('MainCtrl', function ($rootScope, $scope, $time
     //下载android version
     $scope.download_and_v = function () {
         if (!browser.versions.mobile) {
-            $window.location.href = '/static/release/20160323/iweixiao_20160323_v2.3.3.apk';
+            $window.location.href = '/static/release/20160420/iweixiao_20160420_v2.4.apk';
         } else {
             if (browser.versions.android) {
                $window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.boringkiller.xgm'; 
